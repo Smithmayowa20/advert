@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#video{
+  position: fixed;
+  right: 40%;
+  top: 3%;
+}
+
+#video1{
+  -moz-transform:rotate(90deg);
+  -webkit-transform:rotate(90deg);
+  -o-transform:rotate(90deg);
+  -ms-transform:rotate(90deg);
+  transform:rotate(90deg);
+  position: fixed;
+  right: 17%;
+  top: 30%;
+}
+
+#video2{
+  -moz-transform:rotate(270deg);
+  -webkit-transform:rotate(270deg);
+  -o-transform:rotate(270deg);
+  -ms-transform:rotate(270deg);
+  transform:rotate(270deg);
+  position: fixed;
+  left: 15%;
+  top: 30%;
+}
+
+#video3{
+  -moz-transform:rotate(180deg);
+  -webkit-transform:rotate(180deg);
+  -o-transform:rotate(180deg);
+  -ms-transform:rotate(180deg);
+  transform:rotate(180deg);
+  position: fixed;
+  right: 40%;
+  bottom: 3%;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$(document).on("change", ".file_multi_video", function(evt) {
+  var $source = $('#video_here');
+  $source[0].src = URL.createObjectURL(this.files[0]);
+  $source.parent()[0].load();
+  
+  var $source1 = $('#video_here1');
+  $source1[0].src = URL.createObjectURL(this.files[0]);
+  $source1.parent()[0].load();
+  
+  var $source2 = $('#video_here2');
+  $source2[0].src = URL.createObjectURL(this.files[0]);
+  $source2.parent()[0].load();
+  
+  var $source3 = $('#video_here3');
+  $source3[0].src = URL.createObjectURL(this.files[0]);
+  $source3.parent()[0].load();
+});	
+</script>
+</head>
+<body>
+
+<video id="video" width="22%" height="44%" controls autoplay>
+  <source src="mov_bbb.mp4" id="video_here">
+    Your browser does not support HTML5 video.
+</video>
+<video id="video1" width="22%" height="44%" controls autoplay>
+  <source src="mov_bbb.mp4" id="video_here1">
+    Your browser does not support HTML5 video.
+</video>
+<video id="video2" width="22%" height="44%" controls autoplay>
+  <source src="mov_bbb.mp4" id="video_here2">
+    Your browser does not support HTML5 video.
+</video>
+<video id="video3" width="22%" height="44%" controls autoplay>
+  <source src="mov_bbb.mp4" id="video_here3">
+    Your browser does not support HTML5 video.
+</video>
+
+<input type="file" name="file[]" class="file_multi_video" accept="video/*">
+
+</body>
+</html>
