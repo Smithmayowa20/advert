@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
+  <title>Advert</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  body {
+	background-color: #000000;
+	}
+  .bg-1 { 
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+  }
+  </style>
+  <style>
 #video{
-  position: fixed;
-  right: 40%;
-  top: 3%;
 }
 
 #video1{
@@ -14,9 +26,6 @@
   -o-transform:rotate(90deg);
   -ms-transform:rotate(90deg);
   transform:rotate(90deg);
-  position: fixed;
-  right: 17%;
-  top: 30%;
 }
 
 #video2{
@@ -25,9 +34,6 @@
   -o-transform:rotate(270deg);
   -ms-transform:rotate(270deg);
   transform:rotate(270deg);
-  position: fixed;
-  left: 15%;
-  top: 30%;
 }
 
 #video3{
@@ -36,12 +42,8 @@
   -o-transform:rotate(180deg);
   -ms-transform:rotate(180deg);
   transform:rotate(180deg);
-  position: fixed;
-  right: 40%;
-  bottom: 3%;
 }
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
 $(document).on("change", ".file_multi_video", function(evt) {
   var $source = $('#video_here');
@@ -64,24 +66,53 @@ $(document).on("change", ".file_multi_video", function(evt) {
 </head>
 <body>
 
-<video id="video" width="22%" height="44%" controls autoplay>
-  <source src="mov_bbb.mp4" id="video_here">
-    Your browser does not support HTML5 video.
-</video>
-<video id="video1" width="22%" height="44%" controls autoplay>
-  <source src="mov_bbb.mp4" id="video_here1">
-    Your browser does not support HTML5 video.
-</video>
-<video id="video2" width="22%" height="44%" controls autoplay>
-  <source src="mov_bbb.mp4" id="video_here2">
-    Your browser does not support HTML5 video.
-</video>
-<video id="video3" width="22%" height="44%" controls autoplay>
-  <source src="mov_bbb.mp4" id="video_here3">
-    Your browser does not support HTML5 video.
-</video>
+<div class="container-fluid bg-1 text-center">
+  <h4>Welcome To The Next Level</h4>
+  <h4>Of Advertising</h4>
+  <h3>PYRAMID ADVERT</h3>
+</div>
 
+
+<br>
 <input type="file" name="file[]" class="file_multi_video" accept="video/*">
 
+<div class="row">
+  <div class="col-xs-4 col-sm-4"></div>
+  <div class="col-xs-4 col-sm-4 text-center">
+	<video id="video" width="62%" controls autoplay>
+		<source src="mov_bbb.mp4" id="video_here">
+		Your browser does not support HTML5 video.
+	</video>
+  </div>
+  <div class="col-xs-4 col-sm-4"></div>
+</div>
+<br>
+<div class="row">
+  <div class="col-xs-4 col-sm-4 text-right">
+	<video id="video1" width="62%" controls autoplay>
+		<source src="mov_bbb.mp4" id="video_here1">
+		Your browser does not support HTML5 video.
+	</video>
+  </div>
+  <div class="col-xs-4 col-sm-4"></div>
+  <div class="col-xs-4 col-sm-4 text-left">
+	<video id="video2" width="62%" controls autoplay>
+		<source src="mov_bbb.mp4" id="video_here2">
+		Your browser does not support HTML5 video.
+	</video>
+  </div>
+</div>
+<br>
+<div class="row">  
+  <div class="col-xs-4 col-sm-4"></div>
+  <div class="col-xs-4 col-sm-4 text-center">
+	<video id="video3" width="62%" controls autoplay>
+		<source src="mov_bbb.mp4" id="video_here3">
+		Your browser does not support HTML5 video.
+	</video>
+  </div>
+  <div class="col-xs-4 col-sm-4"></div>
+</div>
+<br>
 </body>
 </html>
