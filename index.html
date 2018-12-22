@@ -4,6 +4,7 @@
   <title>Advert</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -61,7 +62,46 @@ $(document).on("change", ".file_multi_video", function(evt) {
   var $source3 = $('#video_here3');
   $source3[0].src = URL.createObjectURL(this.files[0]);
   $source3.parent()[0].load();
+  
+  const vid = document.getElementById("video");
+  const vid1 = document.getElementById("video1");
+  const vid2 = document.getElementById("video2");
+  const vid3 = document.getElementById("video3");
+
+
+  function playVid() { 
+    vid.play();
+	vid1.play(); 
+	vid2.play(); 
+	vid3.play(); 
+  } 
+
+  function pauseVid() { 
+    vid.pause(); 
+	vid1.pause();
+	vid2.pause();
+	vid3.pause();	
+  }
+
+  function stopVid() {
+	vid.pause();
+	vid.currentTime = 0;
+	vid1.pause();
+	vid1.currentTime = 0;
+	vid2.pause();
+	vid2.currentTime = 0;
+	vid3.pause();	
+	vid3.currentTime = 0;
+  }
+  
+  $('#pauseVid').on('click', pauseVid);
+  $('#playVid').on('click', playVid);
+  $('#stopVid').on('click', stopVid);
+  
 });	
+
+
+
 </script>
 </head>
 <body>
@@ -74,8 +114,27 @@ $(document).on("change", ".file_multi_video", function(evt) {
 
 
 <br>
-<input type="file" name="file[]" class="file_multi_video" accept="video/*">
 
+
+<div class="row">
+  <div class="col-xs-3 col-sm-3">
+	<input type="file" name="file[]" class="file_multi_video" accept="video/*">
+  </div>
+  <div class="col-xs-6 col-sm-6 text-center">
+	<span id="pauseVid">
+		<i class="fa fa-pause" style="font-size:24px;color:blue;padding-right:10px"></i>
+	</span>
+	<span id="playVid">
+		<i class="fa fa-play" style="font-size:24px;color:green;padding-right:10px"></i>
+	</span>
+	<span id="stopVid">
+		<i class="fa fa-stop" style="font-size:24px;color:red;padding-right:10px"></i>
+	</span>
+  </div>
+  <div class="col-xs-3 col-sm-3"></div>
+</div>
+
+<br>
 <div class="row">
   <div class="col-xs-4 col-sm-4"></div>
   <div class="col-xs-4 col-sm-4 text-center">
@@ -90,14 +149,14 @@ $(document).on("change", ".file_multi_video", function(evt) {
 <div class="row">
   <div class="col-xs-4 col-sm-4 text-right">
 	<video id="video2" width="62%" controls autoplay>
-		<source src="mov_bbb.mp4" id="video_here1">
+		<source src="mov_bbb.mp4" id="video_here2">
 		Your browser does not support HTML5 video.
 	</video>
   </div>
   <div class="col-xs-4 col-sm-4"></div>
   <div class="col-xs-4 col-sm-4 text-left">
 	<video id="video1" width="62%" controls autoplay>
-		<source src="mov_bbb.mp4" id="video_here2">
+		<source src="mov_bbb.mp4" id="video_here1">
 		Your browser does not support HTML5 video.
 	</video>
   </div>
